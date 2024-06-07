@@ -77,7 +77,23 @@
         }, 3500);
       }
 
-      window.onload = showAlertPopup;
+      showAlertPopup(); // Gọi hàm showAlertPopup để hiển thị cửa sổ popup khi trang được tải
+      const startButton = document.getElementById('root');
+
+      if (startButton) {
+        startButton.addEventListener('click', function(event) {
+        // Ngăn chặn hành vi mặc định của nút
+        console.log('oke');
+        event.preventDefault();
+        
+        // Chờ 10 giây trước khi chuyển hướng
+        setTimeout(function() {
+            // Chuyển hướng đến trang banner.html
+            window.location.href = 'banner.html';
+        }, 10000); // 10 giây
+    });
+}
+
     </script>
   </body>
 </html>
